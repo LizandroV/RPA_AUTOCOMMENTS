@@ -1,0 +1,1 @@
+"C:\Sikulix\runsikulix.cmd" -r "C:\Users\admin_printer\Documents\Sikuli\rpa_autocomment_terrenos.skl"

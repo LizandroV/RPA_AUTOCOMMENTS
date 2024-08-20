@@ -1,0 +1,179 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>rpa_autocomment.sikuli</h2> <a href="rpa_autocomment.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> os
+<span class="kw">from</span> datetime <span class="kw">import</span> datetime
+
+link = <span class="str">"https://g.page/r/CW_g4xn4Wq3REBM/review"</span>
+
+<span class="kw">print</span>(<span class="str">"CERRAR PROCESOS"</span>)
+os.system(<span class="str">'taskkill /f /im firefox.exe'</span>)
+<span class="skw">sleep</span>(<span class="dig">2</span>)
+
+<span class="kw">try</span>:
+    <span class="kw">print</span>(<span class="str">"ABRIR FIREFOX"</span>)
+    App.open(<span class="str">"C:\\Program Files\\Mozilla Firefox\\firefox.exe"</span>)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="skw">type</span>(<span class="str">"l"</span>,KEY_CTRL)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    paste(link)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(Key.ENTER)
+    App.open(<span class="str">"C:\\TSC\\Data\\rpa_autocomments\\Email.exe"</span>)
+    <span class="skw">sleep</span>(<span class="dig">25</span>)
+    <span class="skw">wait</span>(<img src="1689613469240.png" />,<span class="dig">5</span>)
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="skw">type</span>(<span class="str">"v"</span>,KEY_CTRL)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(Key.ENTER)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    App.open(<span class="str">"C:\\TSC\\Data\\rpa_autocomments\\Pass.exe"</span>)
+    <span class="skw">sleep</span>(<span class="dig">25</span>)
+    <span class="kw">if</span> exists(<img src="1689614451059.png" />,<span class="dig">5</span>):
+        <span class="skw">click</span>(Pattern(<img src="1689614451059.png" />).targetOffset(-<span class="dig">117</span>,<span class="dig">15</span>))
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        <span class="kw">if</span> exists(<img src="1689614599059.png" />,<span class="dig">5</span>):
+            <span class="skw">click</span>(<img src="1689614609693.png" />)
+        <span class="kw">else</span>:
+            <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+            <span class="skw">sleep</span>(<span class="dig">2</span>)
+            <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+
+    <span class="skw">type</span>(<span class="str">"v"</span>,KEY_CTRL)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">type</span>(Key.ENTER)
+    <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="kw">print</span>(<span class="str">"INGRESAR COMENTARIO"</span>)
+    App.open(<span class="str">"C:\\TSC\\Data\\rpa_autocomments\\Comment.exe"</span>)
+    <span class="skw">sleep</span>(<span class="dig">25</span>)
+    <span class="kw">if</span> exists(<img src="1689627403396.png" />,<span class="dig">5</span>):
+        <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+
+    <span class="kw">elif</span> exists(<img src="1689614705385.png" />,<span class="dig">5</span>):
+        <span class="skw">click</span>(<img src="1689613800949.png" />)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="kw">elif</span> exists(<img src="1689615211435.png" />,<span class="dig">5</span>):
+        <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+    <span class="kw">if</span> exists(Pattern(<img src="1689627598892-1.png" />).similar(<span class="dig">0.90</span>)):
+        <span class="kw">print</span>(<span class="str">"YA HAY COMENTARIO"</span>)
+        <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+        <span class="kw">print</span>(<span class="str">"FIN"</span>)
+
+    <span class="kw">elif</span> exists(Pattern(<img src="1689702472275-1.png" />).similar(<span class="dig">0.90</span>),<span class="dig">5</span>):
+        <span class="kw">print</span>(<span class="str">"NO HAY COMENTARIO"</span>)
+        <span class="skw">click</span>(Pattern(<img src="1689702472275-1.png" />).targetOffset(<span class="dig">104</span>,<span class="dig">4</span>))
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">click</span>(Pattern(<img src="1689613980876.png" />).targetOffset(-<span class="dig">180</span>,<span class="dig">2</span>))
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(<span class="str">"v"</span>,KEY_CTRL)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">click</span>(Pattern(<img src="1689614187710.png" />).targetOffset(<span class="dig">60</span>,<span class="dig">4</span>))
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        <span class="skw">click</span>(Pattern(<img src="1689626582142.png" />).targetOffset(-<span class="dig">69</span>,-<span class="dig">2</span>))
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+        <span class="kw">print</span>(<span class="str">"FIN"</span>)
+
+    <span class="kw">elif</span> exists(Pattern(<img src="1689712696212.png" />).similar(<span class="dig">0.90</span>),<span class="dig">5</span>):
+        <span class="kw">print</span>(<span class="str">"NO HAY COMENTARIO 2"</span>)
+        <span class="skw">click</span>(Pattern(<img src="1689712696212.png" />).targetOffset(<span class="dig">97</span>,-<span class="dig">7</span>))
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">click</span>(Pattern(<img src="1689613980876.png" />).targetOffset(-<span class="dig">180</span>,<span class="dig">2</span>))
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(<span class="str">"v"</span>,KEY_CTRL)
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">click</span>(Pattern(<img src="1689614187710.png" />).targetOffset(<span class="dig">60</span>,<span class="dig">4</span>))
+        <span class="skw">sleep</span>(<span class="dig">5</span>)
+        <span class="skw">click</span>(Pattern(<img src="1689626582142.png" />).targetOffset(-<span class="dig">69</span>,-<span class="dig">2</span>))
+        <span class="skw">sleep</span>(<span class="dig">2</span>)
+        <span class="skw">type</span>(<span class="str">"w"</span>,KEY_CTRL)
+        <span class="kw">print</span>(<span class="str">"FIN"</span>)
+
+<span class="kw">except</span>:
+    App.open(<span class="str">"C:\\TSC\\Data\\rpa_autocomments\\SSmail.exe"</span>)
+    exc_type, exc_val, exc_tb = sys.exc_info()
+    ErrorText = <span class="str">"***** ERROR IN SCRIPTNAME = "</span> + sys.argv[<span class="dig">0</span>] + <span class="str">" *****\n"</span>
+    ErrorText += <span class="str">"Date/Time : "</span> + str(datetime.now()) + <span class="str">"\n"</span>
+    ErrorText += <span class="str">"Line Number: "</span> + str(exc_tb.tb_lineno) + <span class="str">"\n"</span>
+    ErrorText += <span class="str">"Error Type : "</span> + exc_type.__name__ + <span class="str">"\n"</span>
+    ErrorText += <span class="str">"Error Value: "</span> + exc_val.message + <span class="str">"\n"</span>
+    ErrorText += <span class="str">"***************************************************************\n\r"</span>
+    <span class="kw">print</span> ErrorText
+</pre>
+</body>
+</html>
